@@ -6,6 +6,13 @@ Handles:
 2. ICICI Bank statements
 3. SBI Bank statements
 4. Generic bank statements with withdrawal/deposit columns
+
+Generic credit/debit detection:
+- For statements with separate withdrawal/deposit columns:
+  - Withdrawal column (debit): first amount appears early after value date (gap <= 2 chars)
+  - Deposit column (credit): first amount appears far after value date (gap >= 5 chars)
+- For collapsed PDF text (single column):
+  - Use description clues: 'CR', 'CRED', 'CREDIT', 'FT-', 'DEPOSIT', 'CREDCLUB', etc.
 """
 
 import re
@@ -204,29 +211,103 @@ class BankStatementParser(BaseParser):
 
         return transactions
 
+    def _is_credit_transaction(self, line: str, value_date_match: re.Match,
+                                 after_value_date: str) -> bool:
+        """
+        Determine if a transaction is credit (deposit) or debit (withdrawal).
+
+        Uses a two-tier approach:
+        1. Gap analysis: Large gap (5+ chars) between first amount and balance = deposit column
+        2. Description clues: For collapsed PDF text, check for credit keywords
+
+        Args:
+            line: Original line text
+            value_date_match: Regex match for the value date
+            after_value_date: Text after the value date
+
+        Returns:
+            True if transaction is credit/deposit, False if debit/withdrawal
+        """
+        # Find all amounts in the after-value-date portion
+        amounts = list(AMOUNT_PATTERN.finditer(after_value_date))
+
+        if len(amounts) < 2:
+            return False
+
+        # Check the gap between first amount and balance
+        first_amt_end = after_value_date.find(amounts[0].group(1)) + len(amounts[0].group(1))
+        balance_start = after_value_date.find(amounts[-1].group(1))
+        gap = after_value_date[first_amt_end:balance_start]
+
+        # Large gap (5+ spaces) indicates deposit column (credit)
+        # HDFC format: Withdrawal column is ~8 chars from value date, Deposit column is ~30+ chars
+        is_credit_by_gap = len(gap) >= 5
+
+        if is_credit_by_gap:
+            return True
+
+        # For collapsed PDF text (gap <= 2), use description clues
+        if len(gap) <= 2:
+            desc = line[:value_date_match.start()].strip()
+            desc = re.sub(r'\s{2,}', ' ', desc)  # Normalize whitespace
+            desc_upper = desc.upper()
+
+            # Common credit keywords across bank statements
+            credit_keywords = ['CR', 'CRED', 'CREDIT', 'FT-', 'DEPOSIT', 'CREDCLUB',
+                             'CRED.C', 'NEFT', 'RTGS', 'IMPS', 'TRANSFER IN', 'CREDITED']
+            if any(kw in desc_upper for kw in credit_keywords):
+                return True
+
+        return False
+
+    def _extract_transaction_amounts(self, after_value_date: str, is_credit: bool) -> tuple:
+        """
+        Extract withdrawal and deposit amounts from the after-value-date portion.
+
+        Args:
+            after_value_date: Text after the value date containing amounts
+            is_credit: Whether this is a credit transaction
+
+        Returns:
+            Tuple of (withdrawal, deposit)
+        """
+        amounts = list(AMOUNT_PATTERN.finditer(after_value_date))
+        if len(amounts) < 2:
+            return (0.0, 0.0)
+
+        first_amount = parse_amount(amounts[0].group(1))
+
+        if is_credit:
+            deposit = first_amount
+            withdrawal = 0.0
+        else:
+            withdrawal = first_amount
+            deposit = 0.0
+
+        return (withdrawal, deposit)
+
     def _parse_hdfc_style(self, text: str) -> List[Dict[str, Any]]:
         """
-        Parse HDFC-style fixed-width bank statements.
+        Parse fixed-width bank statements with withdrawal/deposit columns.
 
-        Format (fixed-width columns):
+        This method handles bank statements in the common format:
         Date      Narration          Chq/Ref  ValueDt  Withdrawal  Deposit  Balance
         01/01/26  CC 000485498...    00000... 01/01/26 64,065.00            90,855.96
 
         Key observations:
-        - Date is at position 0-8
+        - Date is at the start
         - Description follows (variable width)
         - Value date appears after the description
         - Withdrawal and Deposit are in separate columns
         - Either withdrawal OR deposit has a value (not both)
-        - Balance is at the very end (after lots of whitespace)
+        - Balance is at the very end
 
         The strategy:
         1. Find value date position
-        2. Extract amounts from the text after value date
-        3. The FIRST amount after value date is the transaction (either withdrawal or deposit)
-        4. The LAST amount is always the balance
-        5. To determine if it's a debit or credit, check if there's a second amount
-           that appears much later in the string (deposit column)
+        2. Extract amounts from text after value date
+        3. First amount after value date is the transaction amount
+        4. Last amount is always the balance
+        5. Use gap analysis and description clues to determine credit vs debit
         """
         transactions = []
         lines = text.splitlines()
@@ -265,57 +346,11 @@ class BankStatementParser(BaseParser):
             # The LAST amount is always the balance
             balance = parse_amount(amounts[-1].group(1))
 
-            # Determine if this is a debit or credit transaction:
-            # - If withdrawal column has value: first amount = withdrawal (debit)
-            # - If deposit column has value: first amount = deposit (credit)
-            #
-            # We detect this by checking the gap between first amount and balance:
-            # - Small gap (1-2 chars) = withdrawal column (debit)
-            # - Large gap (many spaces) = deposit column (credit)
-            # The deposit column appears much further to the right than withdrawal column
+            # Determine if this is a credit or debit transaction
+            is_credit = self._is_credit_transaction(line, value_date_match, after_value_date)
 
-            first_amount = parse_amount(amounts[0].group(1))
-            last_amount = parse_amount(amounts[-1].group(1))
-
-            # Check the gap between first amount and balance
-            first_amt_end = after_value_date.find(amounts[0].group(1)) + len(amounts[0].group(1))
-            balance_start = after_value_date.find(amounts[-1].group(1))
-            gap = after_value_date[first_amt_end:balance_start]
-
-            # Gap length determines if this is debit or credit
-            # HDFC format: Withdrawal column is ~8 chars from value date, Deposit column is ~30+ chars
-            # A gap of 5+ spaces indicates deposit column (credit)
-            # But for PDF-extracted text (collapsed columns), we use description clues
-            is_credit = len(gap) >= 5
-
-            # For PDF text where columns are collapsed (gap = 1), use description clues
-            if not is_credit and len(gap) <= 2:
-                # Extract description from before value date
-                desc = line[:value_date_match.start()].strip()
-                desc = re.sub(r'\s{2,}', ' ', desc)  # Normalize whitespace
-
-                # Check for credit keywords in description
-                desc_upper = desc.upper()
-                credit_keywords = ['CR', 'CRED', 'CREDIT', 'FT-', 'DEPOSIT', 'CREDCLUB', 'CRED.C']
-                is_credit = any(kw in desc_upper for kw in credit_keywords)
-
-                # Update first_amount if this is a credit (deposit)
-                if is_credit:
-                    deposit = first_amount
-                    withdrawal = 0.0
-                else:
-                    withdrawal = first_amount
-                    deposit = 0.0
-            else:
-                # Standard logic based on column gap
-                if is_credit:
-                    deposit = first_amount
-                    withdrawal = 0.0
-                else:
-                    withdrawal = first_amount
-                    deposit = 0.0
-
-            amount = deposit if is_credit else withdrawal
+            # Extract withdrawal and deposit amounts
+            withdrawal, deposit = self._extract_transaction_amounts(after_value_date, is_credit)
 
             # Extract description for the transaction record
             description = line[:value_date_match.start()].strip()
