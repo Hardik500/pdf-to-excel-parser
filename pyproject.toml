@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "statement-parser"
+version = "0.1.0"
+description = "Parse financial statements (bank, credit card, UPI) to normalized Excel/CSV format"
+readme = "README.md"
+authors = [
+    {name = "Statement Parser Team"}
+]
+license = {text = "MIT"}
+python_requires = ">=3.8"
+
+dependencies = [
+    "pdfplumber>=0.9.0",
+    "python-dateutil>=2.8.2",
+    "openpyxl>=3.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+statement-parser = "examples.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["statement_parser*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["statement_parser"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+    "pass",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B"]
+ignore = ["E501", "B008"]

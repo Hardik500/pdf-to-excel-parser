@@ -1,0 +1,361 @@
+
+
+
+HDFC BANK Ltd.                                     Page No .:   1                                        Statement of accounts
+
+
+                                                                         Account Branch : GOVIND MARG JAIPUR
+                                                                         Address        : PLOT NO D-9, SAKET COLONY,
+                                                                                          GOVIND MARG, NR PINK SQAURE MALL,
+MR      HARDIK KHANDELWAL                                                                 ADARSH NAGAR,
+B - 013 RESIDENCY PARK                                                   City           : JAIPUR 302004
+HSR LAYOUT                                                               State          : RAJASTHAN
+.                                                                        Phone no.      : 18002600/18001600
+BANGALORE 560102                                                         Email          : HARDIKKHANDELWAL500@GMAIL.COM
+KARNATAKA INDIA                                                          OD Limit       :              0.00   Currency : INR
+                                                                         Cust ID        : 71461323
+JOINT HOLDERS :                                                          Account No     : 50100180034651   VIRTUAL IMPERIA
+                                                                         A/C Open Date  : 12/03/2021
+Nomination : Registered                                                  Account Status : Regular  
+Statement From      : 01/01/2026  To: 31/01/2026                         RTGS/NEFT IFSC : HDFC0003819    MICR : 302240021   
+                                                                         Branch Code    : 3819     Product Code : 193     
+
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+Date      Narration				    Chq./Ref.No.      Value Dt  Withdrawal Amt.        Deposit Amt.     Closing Balance
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+
+01/01/26  POS 512967XXXXXX9293 DCSI-BBPSBILLPAY     0000600106727129  01/01/26          11,986.30                             154,920.96   
+01/01/26  CC 000485498XXXXXX5391 AUTOPAY SI-TAD     0000000713188780  01/01/26          64,065.00                              90,855.96   
+01/01/26  UPI-GROWW-GROWWSTOCKS.ELEMENTS@ICICI-ICI  0000108889765576  01/01/26           2,800.00                              88,055.96   
+          C0DC0099-108889765576-DEBIT FOR STOCKS S                                                                                          
+01/01/26  UPI-GROWW-GROWWSTOCKS.ELEMENTS@ICICI-ICI  0000108889776164  01/01/26           1,550.00                              86,505.96   
+          C0DC0099-108889776164-DEBIT FOR STOCKS S                                                                                          
+02/01/26  FT- ICICI PRUDENTIAL MUTUAL FUND RED A/C  0000011396653808  02/01/26                            100,000.00          186,505.96   
+          - RED  - 8019- 19027938                                                                                                           
+02/01/26  UPI-XXXXXXXXXXX3258-UBIN0554626-11655651  0000116556516713  02/01/26          35,200.00                             151,305.96   
+          6713-UPI                                                                                                                          
+02/01/26  UPI-M M ENTERPRISES-PAYTMQR2810050501011  0000116562402096  02/01/26           5,253.00                             146,052.96   
+          4VL3CW8V9DE@PAYTM-YESB0PTMUPI-1165624020                                                                                          
+          96-UPI                                                                                                                            
+02/01/26  UPI-LITE-50100180034651-600218121017-ADD  0000600218121017  02/01/26           4,549.95                             141,503.01   
+          MONEY                                                                                                                             
+03/01/26  UPI-PAZHANI  PAZHANI-9880694577@AXL-SBIN  0000116617004197  03/01/26           1,800.00                             139,703.01   
+          0012662-116617004197-UPI                                                                                                          
+03/01/26  UPI-PAZHANI  PAZHANI-PAZHANIPANDURANGAM@  0000116617184032  03/01/26           1,800.00                             137,903.01   
+          OKHDFCBANK-SBIN0012662-116617184032-UPI                                                                                           
+03/01/26  NEFT CR-ICIC0099999-NEXTBILLION TECHNOLO  IN22600319794253  03/01/26                              3,826.73          141,729.74   
+          GY PRIVATE LIMITED CLIENT ACCO-HARDIK KH                                                                                          
+          ANDELWAL-IN22600319794253                                                                                                         
+04/01/26  UPI-GOOGLE INDIA DIGITAL-GOOG-PAYMENTS@A  0000717824850046  04/01/26                                  2.00          141,731.74   
+          XISBANK-UTIB0000553-717824850046-UPI                                                                                              
+04/01/26  UPI-APPLE SERVICES-BILLDESKPG.APPLESERVI  0000102386766903  04/01/26           1,299.00                             140,432.74   
+          CES@HDFCBANK-HDFC0MERUPI-102386766903-AP                                                                                          
+          PLAMP                                                                                                                             
+04/01/26  UPI-GROWW-GROWWSTOCKS.ELEMENTS@ICICI-ICI  0000108911548364  04/01/26           5,000.00                             135,432.74   
+          C0DC0099-108911548364-DEBIT FOR STOCKS S                                                                                          
+04/01/26  UPI-GROWW-GROWWSTOCKS.ELEMENTS@ICICI-ICI  0000108911557704  04/01/26           5,000.00                             130,432.74   
+          C0DC0099-108911557704-DEBIT FOR STOCKS S                                                                                          
+05/01/26  UPI-PRASHANTH SINGH-KIRANPRASHANTSINGH14  0000116722464982  05/01/26             350.00                             130,082.74   
+          3-2@OKHDFCBANK-DBSS0IN0811-116722464982-                                                                                          
+                                                 **Continue** 
+
+
+
+HDFC BANK Ltd.                                     Page No .:   2                                        Statement of accounts
+
+
+                                                                         Account Branch : GOVIND MARG JAIPUR
+                                                                         Address        : PLOT NO D-9, SAKET COLONY,
+                                                                                          GOVIND MARG, NR PINK SQAURE MALL,
+MR      HARDIK KHANDELWAL                                                                 ADARSH NAGAR,
+B - 013 RESIDENCY PARK                                                   City           : JAIPUR 302004
+HSR LAYOUT                                                               State          : RAJASTHAN
+.                                                                        Phone no.      : 18002600/18001600
+BANGALORE 560102                                                         Email          : HARDIKKHANDELWAL500@GMAIL.COM
+KARNATAKA INDIA                                                          OD Limit       :              0.00   Currency : INR
+                                                                         Cust ID        : 71461323
+JOINT HOLDERS :                                                          Account No     : 50100180034651   VIRTUAL IMPERIA
+                                                                         A/C Open Date  : 12/03/2021
+Nomination : Registered                                                  Account Status : Regular  
+Statement From      : 01/01/2026  To: 31/01/2026                         RTGS/NEFT IFSC : HDFC0003819    MICR : 302240021   
+                                                                         Branch Code    : 3819     Product Code : 193     
+
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+Date      Narration				    Chq./Ref.No.      Value Dt  Withdrawal Amt.        Deposit Amt.     Closing Balance
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+
+          UPI                                                                                                                               
+05/01/26  UPI-SWIGGY LTD-SWIGGYUPI@AXB-UTIB0000100  0000181725462149  05/01/26             311.00                             129,771.74   
+          -181725462149-PAY FOR INTENT                                                                                                      
+06/01/26  UPI-FINZOOMERS SERVICES -FINZOOMERS.CF@I  0000108921197257  06/01/26           2,500.00                             127,271.74   
+          CICI-ICIC0DC0099-108921197257-SUBSCHARGE                                                                                          
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921255395  06/01/26             625.00                             126,646.74   
+          C0099-108921255395-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921255406  06/01/26           1,250.00                             125,396.74   
+          C0099-108921255406-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921255529  06/01/26           1,250.00                             124,146.74   
+          C0099-108921255529-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921255904  06/01/26           2,500.00                             121,646.74   
+          C0099-108921255904-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921255954  06/01/26           2,500.00                             119,146.74   
+          C0099-108921255954-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921257143  06/01/26           3,500.00                             115,646.74   
+          C0099-108921257143-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921257170  06/01/26           2,500.00                             113,146.74   
+          C0099-108921257170-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921257154  06/01/26           2,500.00                             110,646.74   
+          C0099-108921257154-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921257138  06/01/26           2,500.00                             108,146.74   
+          C0099-108921257138-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921257089  06/01/26             625.00                             107,521.74   
+          C0099-108921257089-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000108921258287  06/01/26           5,000.00                             102,521.74   
+          C0099-108921258287-PAY VIA RAZORPAY                                                                                               
+06/01/26  UPI-MUTUAL FUNDS ICCL-GROWW.ICCL1.BRK@VA  0000116752496126  06/01/26          35,000.00                              67,521.74   
+          LIDHDFC-HDFC0MERUPI-116752496126-PAID VI                                                                                          
+          A ELEMENTS                                                                                                                        
+08/01/26  FT- HDFC MUTUAL FUND REDEMPTION NEW A/C   0000001409918915  08/01/26                             35,000.00          102,521.74   
+          - HDFC BSE SENSEX INDEX FUND DP GROWTH                                                                                            
+08/01/26  UPI-BOOKMYSHOW-PAYTM-8726277@PTYBL-YESB0  0000101305798704  08/01/26             540.22                             101,981.52   
+                                                 **Continue** 
+
+
+
+HDFC BANK Ltd.                                     Page No .:   3                                        Statement of accounts
+
+
+                                                                         Account Branch : GOVIND MARG JAIPUR
+                                                                         Address        : PLOT NO D-9, SAKET COLONY,
+                                                                                          GOVIND MARG, NR PINK SQAURE MALL,
+MR      HARDIK KHANDELWAL                                                                 ADARSH NAGAR,
+B - 013 RESIDENCY PARK                                                   City           : JAIPUR 302004
+HSR LAYOUT                                                               State          : RAJASTHAN
+.                                                                        Phone no.      : 18002600/18001600
+BANGALORE 560102                                                         Email          : HARDIKKHANDELWAL500@GMAIL.COM
+KARNATAKA INDIA                                                          OD Limit       :              0.00   Currency : INR
+                                                                         Cust ID        : 71461323
+JOINT HOLDERS :                                                          Account No     : 50100180034651   VIRTUAL IMPERIA
+                                                                         A/C Open Date  : 12/03/2021
+Nomination : Registered                                                  Account Status : Regular  
+Statement From      : 01/01/2026  To: 31/01/2026                         RTGS/NEFT IFSC : HDFC0003819    MICR : 302240021   
+                                                                         Branch Code    : 3819     Product Code : 193     
+
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+Date      Narration				    Chq./Ref.No.      Value Dt  Withdrawal Amt.        Deposit Amt.     Closing Balance
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+
+          PTMUPI-101305798704-BIGTREEENTERTAINME                                                                                            
+11/01/26  UPI-DHRUV GARG-7982347685@SUPERYES-FDRL0  0000637767420842  11/01/26                                765.00          102,746.52   
+          005555-637767420842-PAID VIA SUPERMONE                                                                                            
+11/01/26  UPI-ZEPTO MARKETPLACE PR-ZEPTOMARKETPLAC  0000213416275577  11/01/26             209.00                             102,537.52   
+          932523.RZP@AXISBANK-UTIB0000100-21341627                                                                                          
+          5577-NO REMARKS                                                                                                                   
+12/01/26  UPI-GROWW INVEST TECH PR-GROWW.PAYU.BRK@  0000102448053583  12/01/26           1,700.00                             100,837.52   
+          VALIDHDFC-HDFC0MERUPI-102448053583-UPI T                                                                                          
+          RANSACTION                                                                                                                        
+13/01/26  UPI-APPLE MEDIA SERVICES-APPLESERVICES.B  0000102460078248  13/01/26               5.00                             100,832.52   
+          DSI@HDFCBANK-HDFC0MERUPI-102460078248-UP                                                                                          
+          I MANDATE                                                                                                                         
+13/01/26  UPI-APPLE MEDIA SERVICES-APPLESERVICES.B  0000102460081315  13/01/26                                  5.00          100,837.52   
+          DSI@HDFCBANK-HDFC0000001-102460081315-MA                                                                                          
+          NDATE REFUND TES                                                                                                                  
+15/01/26  UPI-ZEPTO MARKETPLACE PR-ZEPTOMARKETPLAC  0000145445687195  15/01/26             163.00                             100,674.52   
+          675861.RZP@RXAXIS-UTIB0000RZP-1454456871                                                                                          
+          95-NO REMARKS                                                                                                                     
+18/01/26  UPI-URBAN COMPANY-URBANCOMPANY1.PAYU@HDF  0000638423133242  18/01/26             164.00                             100,510.52   
+          CBANK-HDFC0MERUPI-638423133242-UPIINTENT                                                                                          
+18/01/26  UPI-GROWW-GROWWSTOCKS.ELEMENTS@ICICI-ICI  0000109013148838  18/01/26           5,000.00                              95,510.52   
+          C0DC0099-109013148838-DEBIT FOR STOCKS S                                                                                          
+18/01/26  UPI-GROWW-GROWWSTOCKS.ELEMENTS@ICICI-ICI  0000109013159362  18/01/26           5,000.00                              90,510.52   
+          C0DC0099-109013159362-DEBIT FOR STOCKS S                                                                                          
+20/01/26  POS 512967XXXXXX9293 DCSI-BBPSBILLPAY     0000602006903063  20/01/26          14,626.02                              75,884.50   
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020795098  20/01/26           2,500.00                              73,384.50   
+          C0099-109020795098-PAY VIA RAZORPAY                                                                                               
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020795819  20/01/26             625.00                              72,759.50   
+          C0099-109020795819-PAY VIA RAZORPAY                                                                                               
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020795773  20/01/26           3,500.00                              69,259.50   
+          C0099-109020795773-PAY VIA RAZORPAY                                                                                               
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020795776  20/01/26           2,500.00                              66,759.50   
+          C0099-109020795776-PAY VIA RAZORPAY                                                                                               
+                                                 **Continue** 
+
+
+
+HDFC BANK Ltd.                                     Page No .:   4                                        Statement of accounts
+
+
+                                                                         Account Branch : GOVIND MARG JAIPUR
+                                                                         Address        : PLOT NO D-9, SAKET COLONY,
+                                                                                          GOVIND MARG, NR PINK SQAURE MALL,
+MR      HARDIK KHANDELWAL                                                                 ADARSH NAGAR,
+B - 013 RESIDENCY PARK                                                   City           : JAIPUR 302004
+HSR LAYOUT                                                               State          : RAJASTHAN
+.                                                                        Phone no.      : 18002600/18001600
+BANGALORE 560102                                                         Email          : HARDIKKHANDELWAL500@GMAIL.COM
+KARNATAKA INDIA                                                          OD Limit       :              0.00   Currency : INR
+                                                                         Cust ID        : 71461323
+JOINT HOLDERS :                                                          Account No     : 50100180034651   VIRTUAL IMPERIA
+                                                                         A/C Open Date  : 12/03/2021
+Nomination : Registered                                                  Account Status : Regular  
+Statement From      : 01/01/2026  To: 31/01/2026                         RTGS/NEFT IFSC : HDFC0003819    MICR : 302240021   
+                                                                         Branch Code    : 3819     Product Code : 193     
+
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+Date      Narration				    Chq./Ref.No.      Value Dt  Withdrawal Amt.        Deposit Amt.     Closing Balance
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020796810  20/01/26           5,000.00                              61,759.50   
+          C0099-109020796810-PAY VIA RAZORPAY                                                                                               
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020796809  20/01/26             625.00                              61,134.50   
+          C0099-109020796809-PAY VIA RAZORPAY                                                                                               
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020796915  20/01/26           2,500.00                              58,634.50   
+          C0099-109020796915-PAY VIA RAZORPAY                                                                                               
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020797012  20/01/26           1,250.00                              57,384.50   
+          C0099-109020797012-PAY VIA RAZORPAY                                                                                               
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020797454  20/01/26           2,500.00                              54,884.50   
+          C0099-109020797454-PAY VIA RAZORPAY                                                                                               
+20/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109020799136  20/01/26           1,250.00                              53,634.50   
+          C0099-109020799136-PAY VIA RAZORPAY                                                                                               
+21/01/26  CC 000402359XXXXXX1218 AUTOPAY SI-TAD     0000000718643501  21/01/26           2,143.00                              51,491.50   
+21/01/26  UPI-ZEPTO MARKETPLACE PR-ZEPTOMARKETPLAC  0000173616360501  21/01/26             100.00                              51,391.50   
+          738214.RZP@RXAIRTEL-AIRP0000011-17361636                                                                                          
+          0501-ZEPTOMARKETPLACEPR                                                                                                           
+22/01/26  UPI-LETTUCE DIGITAL VENT-1GYURH7SAHVZ@ID  0000117549395582  22/01/26          15,000.00                              36,391.50   
+          BI-IBKL0000055-117549395582-UPI                                                                                                   
+22/01/26  UPI-DISTRICT DINING-DISTRICT.DINING@HDFC  0000165436481797  22/01/26             259.00                              36,132.50   
+          BANK-HDFC0MERUPI-165436481797-NO REMARKS                                                                                          
+22/01/26  DEBIT CARD CASH BACK                      000000000000000   22/01/26                                150.00           36,282.50   
+22/01/26  UPI-ANSHUL  KHATTAR-7827511643@YBL-UTIB0  0000117583782308  22/01/26          16,289.00                              19,993.50   
+          003202-117583782308-UPI                                                                                                           
+23/01/26  NEFT CR-DBSS0IN0811-CLARI SOFTWARE PRIVA  0811OP6168084512  23/01/26                            352,269.00          372,262.50   
+          TE LIMITED-HARDIK KHANDELWAL-0811OP61680                                                                                          
+          84512 SALARY FOR JANUARY 2026                                                                                                     
+24/01/26  IB BILLPAY DR-HDFCDE-360886XXXX9292       1769233525065328  24/01/26          49,480.00                             322,782.50   
+24/01/26  POS 512967XXXXXX9293 MAXLIFE              0000000000035033  24/01/26               2.01                             322,780.49   
+26/01/26  UPI-GROWW-GROWWSTOCKS.ELEMENTS@ICICI-ICI  0000109067177148  26/01/26           5,000.00                             317,780.49   
+          C0DC0099-109067177148-DEBIT FOR STOCKS S                                                                                          
+26/01/26  UPI-GROWW-GROWWSTOCKS.ELEMENTS@ICICI-ICI  0000109067194829  26/01/26           5,000.00                             312,780.49   
+          C0DC0099-109067194829-DEBIT FOR STOCKS S                                                                                          
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068269691  27/01/26           2,500.00                             310,280.49   
+                                                 **Continue** 
+
+
+
+HDFC BANK Ltd.                                     Page No .:   5                                        Statement of accounts
+
+
+                                                                         Account Branch : GOVIND MARG JAIPUR
+                                                                         Address        : PLOT NO D-9, SAKET COLONY,
+                                                                                          GOVIND MARG, NR PINK SQAURE MALL,
+MR      HARDIK KHANDELWAL                                                                 ADARSH NAGAR,
+B - 013 RESIDENCY PARK                                                   City           : JAIPUR 302004
+HSR LAYOUT                                                               State          : RAJASTHAN
+.                                                                        Phone no.      : 18002600/18001600
+BANGALORE 560102                                                         Email          : HARDIKKHANDELWAL500@GMAIL.COM
+KARNATAKA INDIA                                                          OD Limit       :              0.00   Currency : INR
+                                                                         Cust ID        : 71461323
+JOINT HOLDERS :                                                          Account No     : 50100180034651   VIRTUAL IMPERIA
+                                                                         A/C Open Date  : 12/03/2021
+Nomination : Registered                                                  Account Status : Regular  
+Statement From      : 01/01/2026  To: 31/01/2026                         RTGS/NEFT IFSC : HDFC0003819    MICR : 302240021   
+                                                                         Branch Code    : 3819     Product Code : 193     
+
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+Date      Narration				    Chq./Ref.No.      Value Dt  Withdrawal Amt.        Deposit Amt.     Closing Balance
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+
+          C0099-109068269691-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068269815  27/01/26           2,500.00                             307,780.49   
+          C0099-109068269815-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068269849  27/01/26           5,000.00                             302,780.49   
+          C0099-109068269849-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068270055  27/01/26           2,500.00                             300,280.49   
+          C0099-109068270055-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068270010  27/01/26           3,500.00                             296,780.49   
+          C0099-109068270010-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068271660  27/01/26           1,250.00                             295,530.49   
+          C0099-109068271660-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068271696  27/01/26             625.00                             294,905.49   
+          C0099-109068271696-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068271639  27/01/26           1,250.00                             293,655.49   
+          C0099-109068271639-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068271606  27/01/26           2,500.00                             291,155.49   
+          C0099-109068271606-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068915767  27/01/26               1.00                             291,154.49   
+          C0099-109068915767-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068923564  27/01/26               1.00                             291,153.49   
+          C0099-109068923564-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068928274  27/01/26               1.00                             291,152.49   
+          C0099-109068928274-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068933002  27/01/26               1.00                             291,151.49   
+          C0099-109068933002-PAY VIA RAZORPAY                                                                                               
+27/01/26  UPI-INDMONEY-INDMONEY1X.RZP@ICICI-ICIC0D  0000109068945483  27/01/26               1.00                             291,150.49   
+          C0099-109068945483-PAY VIA RAZORPAY                                                                                               
+28/01/26  ACH D- GROWW-0000CEVRLK7LQIRVZR260270357  0000003895251232  28/01/26          25,000.00                             266,150.49   
+28/01/26  ACH D- GROWW-00008GXIPD6E3PW5R7260270351  0000003895251269  28/01/26          28,500.00                             237,650.49   
+28/01/26  ACH D- GROWW-0000WHNGOK2CR2LFO1260270340  0000003895251315  28/01/26          30,500.00                             207,150.49   
+28/01/26  ACH D- GROWW-0000GFH9EV4UF7LV8P260270354  0000003895251338  28/01/26          36,000.00                             171,150.49   
+28/01/26  ACH D- GROWW-00009F6OSIMN6O7C1P260270355  0000003895251347  28/01/26          40,000.00                             131,150.49   
+28/01/26  UPI-GROWW INVEST TECH PR-GROWW.BRK@VALID  0000113156403791  28/01/26          50,000.00                              81,150.49   
+                                                 **Continue** 
+
+
+
+HDFC BANK Ltd.                                     Page No .:   6                                        Statement of accounts
+
+
+                                                                         Account Branch : GOVIND MARG JAIPUR
+                                                                         Address        : PLOT NO D-9, SAKET COLONY,
+                                                                                          GOVIND MARG, NR PINK SQAURE MALL,
+MR      HARDIK KHANDELWAL                                                                 ADARSH NAGAR,
+B - 013 RESIDENCY PARK                                                   City           : JAIPUR 302004
+HSR LAYOUT                                                               State          : RAJASTHAN
+.                                                                        Phone no.      : 18002600/18001600
+BANGALORE 560102                                                         Email          : HARDIKKHANDELWAL500@GMAIL.COM
+KARNATAKA INDIA                                                          OD Limit       :              0.00   Currency : INR
+                                                                         Cust ID        : 71461323
+JOINT HOLDERS :                                                          Account No     : 50100180034651   VIRTUAL IMPERIA
+                                                                         A/C Open Date  : 12/03/2021
+Nomination : Registered                                                  Account Status : Regular  
+Statement From      : 01/01/2026  To: 31/01/2026                         RTGS/NEFT IFSC : HDFC0003819    MICR : 302240021   
+                                                                         Branch Code    : 3819     Product Code : 193     
+
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+Date      Narration				    Chq./Ref.No.      Value Dt  Withdrawal Amt.        Deposit Amt.     Closing Balance
+--------  ----------------------------------------  ----------------  --------  ------------------  ------------------  ------------------
+
+          ICICI-ICIC0DC0099-113156403791-PAID VIA                                                                                           
+          ELEMENTS                                                                                                                          
+28/01/26  UPI-GROWW INVEST TECH PV-GROWW.BRK@VALID  0000113420062876  28/01/26          10,000.00                              71,150.49   
+          HDFC-HDFC0MERUPI-113420062876-PAID VIA E                                                                                          
+          LEMENTS                                                                                                                           
+31/01/26  POS 512967XXXXXX9293 DCSI-BBPSBILLPAY     0000603106010086  31/01/26           2,010.91                              69,139.58   
+31/01/26  UPI-APPLE MEDIA SERVICES-APPLESERVICES.B  0000102586423805  31/01/26               5.00                              69,134.58   
+          DSI@HDFCBANK-HDFC0MERUPI-102586423805-EX                                                                                          
+          ECUTION TEST                                                                                                                      
+31/01/26  UPI-APPLE MEDIA SERVICES-APPLESERVICES.B  0000102586460390  31/01/26                                  5.00           69,139.58   
+          DSI@HDFCBANK-HDFC0000001-102586460390-MA                                                                                          
+          NDATE REFUND TES                                                                                                                  
+31/01/26  UPI-YUVRAJ SINGH-9571137401@PTYES-BARB0S  0000698448643916  31/01/26                              1,800.00           70,939.58   
+          IRJAI-698448643916-SENT FROM PAYTM                                                                                                
+
+
+********  ****************************************  ****************  ********  ******************  ******************  ******************
+******************************************************************************************************************************************
+
+         STATEMENT SUMMARY  :- 
+           Opening Balance                                                      Debits              Credits          Closing Bal 
+                166,907.26                                                  589,790.41           493,822.73            70,939.58 
+
+                                                                              Dr Count             Cr Count 
+                                                                                    78                   10 
+
+
+             Generated On:   08-Feb-2026 13:27                   Generated By:  71461323             Requesting Branch Code: NET 
+
+
+State account branch GSTN:08AAACH2702H1Z0
+ HDFC Bank GSTIN number details are available at https://www.hdfcbank.com/personal/making-payments/online-tax-payment/goods-and-service-tax
+           Registered Office Address: HDFC Bank House, Senapati Bapat Marg, Lower Parel, Mumbai 400013	 
+                                            ---  End Of Statement ---  
+

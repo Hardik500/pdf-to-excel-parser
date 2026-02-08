@@ -1,0 +1,125 @@
+# Python
+*.pyc
+__pycache__
+
+# Environment
+.env
+.venv
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Output files (generated during parsing)
+output/*.xlsx
+output/*.xls
+output/*.csv
+
+# Test statements (sample PDFs used for testing)
+tests/test_statements/*.pdf
+tests/test_statements/*_unlock*.pdf
+tests/test_statements/*.txt
+
+# Data
+*.db
+*.sqlite
+*.sqlite3
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Other
+*.swp
+*.swo
+*.pyo
+*.pyd
+*.pyc
+*.pyc3
+*.pyc36
+*.pyc37
+*.pyc38
+*.pyc39
+*.pyc40
+*.pyc41
+*.pyc42
+*.pyc43
+*.pyc44
+*.pyc45
+*.pyc46
+*.pyc47
+*.pyc48
+*.pyc49
+*.pyc50
+*.pyc51
+*.pyc52
+*.pyc53
+*.pyc54
+*.pyc55
+*.pyc56
+*.pyc57
+*.pyc58
+*.pyc59
+*.pyc60
+*.pyc61
+*.pyc62
+*.pyc63
+*.pyc64
+*.pyc65
+*.pyc66
+*.pyc67
+*.pyc68
+*.pyc69
+*.pyc70
+*.pyc71
+*.pyc72
+*.pyc73
+*.pyc74
+*.pyc75
+*.pyc76
+*.pyc77
+*.pyc78
+*.pyc79
+*.pyc80
+*.pyc81
+*.pyc82
+*.pyc83
+*.pyc84
+*.pyc85
+*.pyc86
+*.pyc87
+*.pyc88
+*.pyc89
+*.pyc90
+*.pyc91
+*.pyc92
+*.pyc93
+*.pyc94
+*.pyc95
+*.pyc96
+*.pyc97
+*.pyc98
+*.pyc99
+*.pyc100
