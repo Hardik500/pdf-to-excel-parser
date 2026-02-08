@@ -216,8 +216,17 @@ class BankStatementParser(BaseParser):
         - Date is at position 0-8
         - Description follows (variable width)
         - Value date appears after the description
-        - Withdrawal/Deposit appear after value date
+        - Withdrawal and Deposit are in separate columns
+        - Either withdrawal OR deposit has a value (not both)
         - Balance is at the very end (after lots of whitespace)
+
+        The strategy:
+        1. Find value date position
+        2. Extract amounts from the text after value date
+        3. The FIRST amount after value date is the transaction (either withdrawal or deposit)
+        4. The LAST amount is always the balance
+        5. To determine if it's a debit or credit, check if there's a second amount
+           that appears much later in the string (deposit column)
         """
         transactions = []
         lines = text.splitlines()
@@ -238,109 +247,109 @@ class BankStatementParser(BaseParser):
             if not date_normalized:
                 continue
 
-            # Find all amounts in the line
-            amounts = list(AMOUNT_PATTERN.finditer(line))
-            if not amounts:
+            # Find position of value date
+            value_date_match = DATE_PATTERN_DDMMYYYY.search(line, date_match.end())
+            if not value_date_match:
                 continue
 
-            # Extract amounts - look for the ones that appear after value date
-            # The pattern is: Date + Description + ValueDate + Amount(s) + Balance
-            # We want the amounts that appear right after the value date
+            # Extract the part after value date
+            after_value_date = line[value_date_match.end():].strip()
 
-            # Find position of value date (same format as first date)
-            value_date_match = DATE_PATTERN_DDMMYYYY.search(line, date_match.end())
-            if value_date_match:
-                after_value_date = line[value_date_match.end():].strip()
-                # Find amounts in the part after value date
-                for match in amounts:
-                    if match.start() > value_date_match.start():
-                        # This is a transaction amount, not reference number
-                        amount_val = parse_amount(match.group(1))
-                        if amount_val > 100:  # Reasonable transaction amount
-                            # Check if there's significant content after the amount (balance)
-                            after_amount = line[match.end():].strip()
-                            if len(after_amount) < 15:  # Just balance after
-                                balance = amount_val
-                            else:
-                                # This might be withdrawal or deposit
-                                # We'll determine by checking which column is non-zero
-                                pass
+            # Find all amounts in this part
+            amounts = list(AMOUNT_PATTERN.finditer(after_value_date))
 
-            # Better approach: use regex to extract columns
-            # Format: Date  Desc  Ref  ValueDate  Withdrawal  Deposit  Balance
-            # The key insight is that Balance is the last amount in the line
-            # Withdrawal and Deposit appear before Balance
-            # Note: Either withdrawal or deposit will be present, but not both
-            # The last amount is always the balance
+            if len(amounts) < 2:
+                # Need at least 2 amounts (transaction + balance)
+                continue
+
+            # The LAST amount is always the balance
+            balance = parse_amount(amounts[-1].group(1))
+
+            # Determine if this is a debit or credit transaction:
+            # - If withdrawal column has value: first amount = withdrawal (debit)
+            # - If deposit column has value: first amount = deposit (credit)
             #
-            # Strategy: Find all amounts in the line after the value date
-            # The LAST amount is balance, others are transaction amounts
-            # Reference number can be alphanumeric (e.g., ICICN22025040505839079)
-            # Reference number appears between description and value date, separated by space
-            transaction_pattern = re.compile(
-                r'^(\d{2}/\d{2}/\d{2})\s+'    # Date (group 1)
-                r'(.+?)\s+'                     # Description/narration (group 2)
-                r'(\S+)\s+'                     # Reference number - any non-space chars (group 3)
-                r'(\d{2}/\d{2}/\d{2})\s+'       # Value date (group 4)
-                r'(.+)$',                       # Rest of line (group 5) - everything after value date
-                re.IGNORECASE
-            )
+            # We detect this by checking the gap between first amount and balance:
+            # - Small gap (1-2 chars) = withdrawal column (debit)
+            # - Large gap (many spaces) = deposit column (credit)
+            # The deposit column appears much further to the right than withdrawal column
 
-            tx_match = transaction_pattern.match(line)
-            if tx_match:
-                # Extract the rest of the line after value date
-                rest = tx_match.group(5)
-                reference = tx_match.group(3)  # Reference number
+            first_amount = parse_amount(amounts[0].group(1))
+            last_amount = parse_amount(amounts[-1].group(1))
 
-                # Find all amounts in the rest
-                amounts = list(AMOUNT_PATTERN.finditer(rest))
+            # Check the gap between first amount and balance
+            first_amt_end = after_value_date.find(amounts[0].group(1)) + len(amounts[0].group(1))
+            balance_start = after_value_date.find(amounts[-1].group(1))
+            gap = after_value_date[first_amt_end:balance_start]
 
-                if len(amounts) >= 1:
-                    # The LAST amount is always the balance
-                    balance = parse_amount(amounts[-1].group(1))
+            # Gap length determines if this is debit or credit
+            # HDFC format: Withdrawal column is ~8 chars from value date, Deposit column is ~30+ chars
+            # A gap of 5+ spaces indicates deposit column (credit)
+            # But for PDF-extracted text (collapsed columns), we use description clues
+            is_credit = len(gap) >= 5
 
-                    # If there are multiple amounts, the first one(s) are transaction amounts
-                    # Determine if it's withdrawal or deposit based on column position
-                    # Withdrawal column appears before deposit column
-                    if len(amounts) >= 2:
-                        # First non-balance amount is the transaction amount
-                        # It appears in the withdrawal column if no deposit follows
-                        # We'll assume it's the withdrawal (debit) since deposit would come after
-                        transaction_amount = parse_amount(amounts[0].group(1))
-                        withdrawal = transaction_amount
-                        deposit = 0.0
-                    else:
-                        # Only balance found, use it
-                        withdrawal = 0.0
-                        deposit = 0.0
+            # For PDF text where columns are collapsed (gap = 1), use description clues
+            if not is_credit and len(gap) <= 2:
+                # Extract description from before value date
+                desc = line[:value_date_match.start()].strip()
+                desc = re.sub(r'\s{2,}', ' ', desc)  # Normalize whitespace
 
-                    # For bank statements, the last amount is balance, not a transaction amount
-                    # So we need to determine which of withdrawal/deposit is the transaction amount
-                    is_credit = deposit > 0
+                # Check for credit keywords in description
+                desc_upper = desc.upper()
+                credit_keywords = ['CR', 'CRED', 'CREDIT', 'FT-', 'DEPOSIT', 'CREDCLUB', 'CRED.C']
+                is_credit = any(kw in desc_upper for kw in credit_keywords)
 
-                    # Use deposit for credit, withdrawal for debit
-                    amount = deposit if is_credit else withdrawal
+                # Update first_amount if this is a credit (deposit)
+                if is_credit:
+                    deposit = first_amount
+                    withdrawal = 0.0
+                else:
+                    withdrawal = first_amount
+                    deposit = 0.0
+            else:
+                # Standard logic based on column gap
+                if is_credit:
+                    deposit = first_amount
+                    withdrawal = 0.0
+                else:
+                    withdrawal = first_amount
+                    deposit = 0.0
 
-                    # Extract description
-                    description = tx_match.group(2).strip()
-                    description = re.sub(r'\s{2,}', ' ', description)  # Normalize whitespace
+            amount = deposit if is_credit else withdrawal
 
-                    if description and len(description) > 3:
-                        transactions.append({
-                            'date': date_normalized,
-                            'description': description,
-                            'narration': description,
-                            'value_date': date_normalized,
-                            'debit': withdrawal,
-                            'credit': deposit,
-                            'balance': balance,
-                            'reference': reference,
-                            'card_no': '',
-                            'type': 'credit' if is_credit else 'debit',
-                            'merchant': description,
-                        })
+            # Extract description for the transaction record
+            description = line[:value_date_match.start()].strip()
+            description = re.sub(r'\s{2,}', ' ', description)  # Normalize whitespace
+
+            if description and len(description) > 3:
+                # Extract reference number (between description and value date)
+                reference = self._extract_reference(line, value_date_match)
+
+                transactions.append({
+                    'date': date_normalized,
+                    'description': description,
+                    'narration': description,
+                    'value_date': date_normalized,
+                    'debit': withdrawal,
+                    'credit': deposit,
+                    'balance': balance,
+                    'reference': reference,
+                    'card_no': '',
+                    'type': 'credit' if is_credit else 'debit',
+                    'merchant': description,
+                })
 
         return transactions
+
+    def _extract_reference(self, line: str, value_date_match: re.Match) -> str:
+        """Extract reference number from line."""
+        # Reference is between description and value date
+        after_desc = line[value_date_match.start():].strip()
+        # Find alphanumeric reference pattern
+        ref_match = re.search(r'([A-Z0-9]{8,20})', after_desc)
+        if ref_match:
+            return ref_match.group(1)
+        return ""
 
     def _parse_generic(self, text: str) -> List[Dict[str, Any]]:
         """Fallback to generic parsing."""
