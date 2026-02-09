@@ -3,6 +3,6 @@ Formats package for statement parsers.
 """
 
 from .base import BaseParser, ParseResult
-from .generic_parser import GenericStatementParser
+from .bank_statement import BankStatementParser
 
-__all__ = ['BaseParser', 'ParseResult', 'GenericStatementParser']
+__all__ = ['BaseParser', 'ParseResult', 'BankStatementParser']

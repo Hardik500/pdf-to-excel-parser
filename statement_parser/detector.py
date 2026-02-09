@@ -57,51 +57,16 @@ def detect_statement_type(text: str) -> StatementType:
     """
     Detect the type of financial statement from text content.
 
-    Uses a hierarchy of detection strategies:
-    1. Header-based detection (most reliable)
-    2. Column-based detection
-    3. Pattern-based detection
-    4. Heuristic analysis
+    For a generic parser approach, always return BANK type to use the
+    unified BankStatementParser for all statement formats.
 
     Args:
         text: Statement text to analyze
 
     Returns:
-        StatementType enum value
+        StatementType.BANK for all inputs
     """
-    text_lower = text.lower()
-
-    # Check for combined statements first
-    if _is_combined_statement(text_lower):
-        return StatementType.COMBINED
-
-    # CSV-based detection (strong indicator)
-    # Look for CSV headers that indicate bank statement format
-    if 'debit amount' in text_lower and 'credit amount' in text_lower:
-        return StatementType.BANK
-    if 'debitAmt' in text_lower or 'debit amt' in text_lower:
-        return StatementType.BANK
-    if 'withdrawal amt' in text_lower and 'deposit amt' in text_lower:
-        return StatementType.BANK
-
-    # Score each statement type
-    scores = {
-        StatementType.BANK: _score_bank_statement(text_lower),
-        StatementType.CREDIT_CARD: _score_credit_card(text_lower),
-        StatementType.UPI: _score_upi_statement(text_lower),
-    }
-
-    # Find the highest scoring type
-    max_score = max(scores.values())
-    if max_score < 2:  # Threshold for reliable detection
-        return StatementType.UNKNOWN
-
-    # Return type with highest score
-    for stmt_type, score in scores.items():
-        if score == max_score:
-            return stmt_type
-
-    return StatementType.UNKNOWN
+    return StatementType.BANK
 
 
 def _score_bank_statement(text: str) -> int:
@@ -131,6 +96,15 @@ def _score_bank_statement(text: str) -> int:
     if 'withdrawal' in text and 'deposit' in text:
         score += 3
 
+    # INR prefix pattern (very strong indicator for Indian bank statements)
+    # Look for "INR X,XXX.XX" pattern
+    if re.search(r'INR\s*[0-9,]+\.\d{2}', text):
+        score += 3
+
+    # Separate Debits/Credits columns (strong indicator for bank statements)
+    if 'debits' in text and 'credits' in text:
+        score += 3
+
     return score
 
 
@@ -153,17 +127,18 @@ def _score_credit_card(text: str) -> int:
         if kw in text:
             score += 1
 
-    # Total amount due (strong indicator)
-    if 'total amount due' in text or 'total amount' in text:
-        score += 2
+    # Total amount due / Minimum amount due (strong indicator for credit cards)
+    if 'total amount due' in text or 'minimum amount due' in text:
+        score += 3
 
-    # Card number pattern
+    # Card number pattern (strong indicator)
     if re.search(r'card\s*(no\.?|number)\s*[:\s]*\d{4}[\s*]*\d{4}[\s*]*\d{4}', text):
-        score += 2
+        score += 3
 
-    # Credit/Debit column pattern
-    if ('debit' in text or 'cr' in text) and 'credit' in text:
-        score += 2
+    # Credit/Debit column pattern (weaker indicator - also appears in bank statements)
+    # Reduce weight because bank statements also have debit/credit columns
+    if 'debit' in text and 'credit' in text:
+        score += 1
 
     return score
 

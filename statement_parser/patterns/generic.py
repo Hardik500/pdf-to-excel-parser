@@ -79,6 +79,15 @@ def is_skip_line(line: str) -> bool:
         if re.match(pattern, line.strip()):
             return True
 
+    # Check if line looks like a transaction (has date AND amount)
+    # If so, don't skip even if it contains skip keywords
+    from statement_parser.patterns.generic import DATE_PATTERN_DDMMYYYY, DATE_PATTERN_DDMMMYYYY, AMOUNT_PATTERN
+    has_date = DATE_PATTERN_DDMMYYYY.search(line) or DATE_PATTERN_DDMMMYYYY.search(line)
+    has_amount = AMOUNT_PATTERN.search(line)
+    if has_date and has_amount:
+        # This looks like a transaction line - don't skip
+        return False
+
     # For keywords, check if they appear as whole words, not as substrings
     # This prevents false positives like "credit" in "UPI-CREDCLUB"
     for keyword in SKIP_KEYWORDS:

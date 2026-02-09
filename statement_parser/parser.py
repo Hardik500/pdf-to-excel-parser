@@ -15,10 +15,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from statement_parser.detector import detect_statement_type, StatementType
-from statement_parser.formats.generic_parser import GenericStatementParser
 from statement_parser.formats.bank_statement import BankStatementParser
-from statement_parser.formats.credit_card import CreditCardParser
-from statement_parser.formats.upi_statement import UPIStatementParser
 from statement_parser.output import OutputGenerator
 from statement_parser.utils.formatting import parse_date
 
@@ -60,10 +57,7 @@ class StatementParser:
         """
         self.options = options or ParseOptions()
         self.parsers = [
-            ('generic', GenericStatementParser()),
             ('bank', BankStatementParser()),
-            ('credit_card', CreditCardParser()),
-            ('upi', UPIStatementParser()),
         ]
         self.last_parser_used: Optional[str] = None
         self.last_statement_type: Optional[str] = None

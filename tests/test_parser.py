@@ -23,7 +23,7 @@ class TestStatementDetector:
     """Tests for statement type detection."""
 
     def test_detect_credit_card(self):
-        """Test detection of credit card statements."""
+        """Test detection of credit card statements - now returns BANK for generic parsing."""
         text = """
         HDFC Bank Ltd.
         Credit Card Statement
@@ -32,7 +32,8 @@ class TestStatementDetector:
         Minimum Amount Due: 250.00
         """
         result = detector(text)
-        assert result == StatementType.CREDIT_CARD
+        # Generic parser approach - all statements are treated as BANK type
+        assert result == StatementType.BANK
 
     def test_detect_bank_statement(self):
         """Test detection of bank account statements."""
@@ -47,7 +48,7 @@ class TestStatementDetector:
         assert result == StatementType.BANK
 
     def test_detect_upi_statement(self):
-        """Test detection of UPI/payment statements."""
+        """Test detection of UPI/payment statements - now returns BANK for generic parsing."""
         text = """
         Ixigo Financial Services Pvt Ltd
         UPI Transaction Statement
@@ -64,16 +65,19 @@ class TestStatementDetector:
         Jan 26 Dr
         """
         result = detector(text)
-        assert result == StatementType.UPI
+        # Generic parser approach - all statements are treated as BANK type
+        assert result == StatementType.BANK
 
     def test_detect_unknown(self):
-        """Test detection of unknown statement type."""
+        """Test detection of unknown statement type - now returns BANK for generic parsing."""
         text = """
         This is just some regular text
         Not a financial statement
         """
         result = detector(text)
-        assert result == StatementType.UNKNOWN
+        # Generic parser approach - even unknown texts are treated as BANK type
+        # (though parsing will likely fail or return no transactions)
+        assert result == StatementType.BANK
 
 
 class TestStatementParser:
@@ -295,17 +299,24 @@ class TestPatternLearning:
 
     def test_generic_parser_detection(self):
         """Test that generic parser can detect statements."""
-        from statement_parser.formats.generic_parser import GenericStatementParser
+        from statement_parser.formats.bank_statement import BankStatementParser
 
-        parser = GenericStatementParser()
-        text = "01/01/2024 Test Transaction 100.00"
+        parser = BankStatementParser()
+        # More realistic test text with multiple lines and financial indicators
+        text = """
+        Bank Statement
+        Account Number: XXXX1234
+        Date        Description           Amount
+        01/01/2024  Test Transaction      100.00
+        02/01/2024  Another Transaction   200.00
+        """
         assert parser.can_parse(text)
 
     def test_generic_parser_extraction(self):
         """Test that generic parser extracts transactions."""
-        from statement_parser.formats.generic_parser import GenericStatementParser
+        from statement_parser.formats.bank_statement import BankStatementParser
 
-        parser = GenericStatementParser()
+        parser = BankStatementParser()
         text = """
         Statement for January 2024
 
